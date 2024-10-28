@@ -1,0 +1,42 @@
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+.title {
+    color: #445161;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+.what {
+    padding: 50px 0px;
+  }
+  
+.what__row {
+    display: flex;
+  }
+  
+.what__image {
+    flex: 0 0 430px;
+  }
+  
+.what__image img {
+    max-width: 100%;
+  }
+  
+.what__body {
+    flex: 1 1 auto;
+    padding-left: 38px;
+  }
+  
+.what__title {
+    margin-bottom: 33px;
+  }
+  
+.what__text p {
+    color: #333;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
