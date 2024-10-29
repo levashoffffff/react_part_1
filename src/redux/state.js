@@ -1,47 +1,58 @@
-//-------------Импорт функции из render.js
 import { renderEntireTree } from "../render.js";
-///////////////Импорт функции из render.js
 
 let state = {
-    profilePage: {
-      postData: [
-        {id: 1, message: 'Hi, how are you', count: 15},
-        {id: 2, message: 'It s my first post', count: 20}
-      ]
-    },
-    dialogsPage: {
-      dialogsData: [
-        {id: 1, name: 'Andrey'},
-        {id: 2, name: 'Artur'},
-        {id: 3, name: 'Katya'},
-        {id: 4, name: 'Victor'},
-        {id: 5, name: 'Valera'},
-      ],
-      messagesData: [
-        {id: 1, message: 'Hi'},
-        {id: 2, message: 'How are you?'},
-        {id: 3, message: 'Hello'},
-      ]
-    },
-    navbar: {
-      friends: [
-        {id: 1, name: "Vasya"},
-        {id: 2, name: "Sasha"},
-        {id: 3, name: "Sveta"},
-      ]
-    }
-}
+  columnsPage: {
+    columData: [
+      {  id: 1, 
+        "itemTitle": "Заголовок 1",
+        "itemText": "По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен."
+      },
+      {  id: 2, 
+        "itemTitle": "Заголовок 2",
+        "itemText": "По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у"
+      },
+      {  id: 3, 
+        "itemTitle": "Заголовок 3",
+        "itemText": "По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст."
+      },
+      {  id: 4, 
+        "itemTitle": "Заголовок 4",
+        "itemText": "По своей сути рыбатекст является "
+      },
+    ]
+  },
+  verticalPage: {
+    verticalData: [
+      { id: 1,
+        "verticalSubtitle": "буду рад",
+        "verticalLabel": "подписке",
+        "verticalText": "По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках"
+      },
+      { id: 2,
+        "verticalSubtitle": "не буду рад",
+        "verticalLabel": "дизлайку",
+        "verticalText": "По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен."
+      },
+      { id: 3,
+        "verticalSubtitle": "нейтрально",
+        "verticalLabel": "просмотр",
+        "verticalText": "По своей сути рыбатекст является альтернативой традиционному"
+      }
+    ]
+  }
+};
 
-export let addPost = (postMessage) => {
+
+export let addPost = (itemTitle, itemText) => {
 
   let newPost = {
-    id: 3,
-    message: postMessage,
-    count: 0
-  };
+    id: 5,
+    "itemTitle": itemTitle,
+    "itemText": itemText
+  }
 
-  state.profilePage.postData.push(newPost);
-  //Запускается функция, которая будет повторно отрисовывать render с учетом изменившихся данных в state.js
+  state.columnsPage.columData.push(newPost);
+
   renderEntireTree(state);
 }
 

@@ -24,3 +24,21 @@
     flex-wrap: wrap;
     margin: 0px -8px;
   }
+
+.add__post {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.add__post input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+.add__post button {
+  width: 100%;
+  padding: 10px;
+}

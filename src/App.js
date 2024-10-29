@@ -6,7 +6,7 @@ import Vertical from './components/Vertical/Vertical.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className="wrapper">
@@ -17,8 +17,8 @@ function App() {
 
           <Routes>
             <Route path="/" element={<What />} />
-            <Route path="/columns" element={<Columns />} />
-            <Route path="/vertical" element={<Vertical />} />
+            <Route path="/columns" element={<Columns columnsPage={props.state.columnsPage} addPost={props.addPost}/>} />
+            <Route path="/vertical" element={<Vertical verticalPage={props.state.verticalPage} />} />
           </Routes>
         </div>
 
