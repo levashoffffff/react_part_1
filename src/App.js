@@ -17,7 +17,7 @@ function App(props) {
 
           <Routes>
             <Route path="/" element={<What />} />
-            <Route path="/columns" element={<Columns columnsPage={props.state.columnsPage} addPost={props.addPost}/>} />
+            <Route path="/columns" element={<Columns columnsPage={props.state.columnsPage} dispatch={props.dispatch}/>} />
             <Route path="/vertical" element={<Vertical verticalPage={props.state.verticalPage} />} />
           </Routes>
         </div>

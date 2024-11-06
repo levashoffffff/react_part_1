@@ -1,6 +1,7 @@
 import styles from './Columns.module.css';
 import ColumnsColum from './ColumnsColum/ColumnsColum';
 import React from 'react';
+import {addPostObjectData, removePostObjectData} from './../../redux/state.js'
 
 
 const Columns = (props) => {
@@ -8,10 +9,21 @@ const Columns = (props) => {
     let addItemTitle = React.createRef();
     let addItemText = React.createRef();
 
+    //Добавить пост
     let addPost = () => {
       let addTitle = addItemTitle.current.value;
       let addText = addItemText.current.value;
-      props.addPost(addTitle, addText);
+      /* props.dispatch({
+        type: 'ADD-POST',
+        itemTitle: addTitle,
+        itemText: addText
+      }); */
+      props.dispatch(addPostObjectData(addTitle, addText));
+    }
+
+    //Удалить пост
+    let removePost = () => {
+      props.dispatch(removePostObjectData());
     }
 
     //Преобразование
@@ -39,7 +51,8 @@ const Columns = (props) => {
             <div>
               <input type="text" ref={addItemText} />
             </div>
-            <button type="button" onClick={addPost}>Добавить пост</button> 
+            <button type="button" onClick={addPost}>Добавить пост</button>
+            <button type="button" onClick={removePost}>Удалить пост</button>
           </div>
         </div>
       </div>
