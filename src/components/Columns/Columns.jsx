@@ -1,7 +1,7 @@
 import styles from './Columns.module.css';
 import ColumnsColum from './ColumnsColum/ColumnsColum';
 import React from 'react';
-import {addPostObjectData, removePostObjectData} from './../../redux/state.js'
+import {addPostObjectData, removePostObjectData} from './../../redux/columns-page-reducer.js'
 
 
 const Columns = (props) => {

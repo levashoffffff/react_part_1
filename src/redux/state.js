@@ -1,6 +1,7 @@
 /* import { renderEntireTree } from "../render.js"; */
-const ADD_POST = 'ADD-POST';
-const REMOVE_POST = 'REMOVE-POST';
+import columnsPageReducer from "./columns-page-reducer.js"
+/* const ADD_POST = 'ADD-POST';
+const REMOVE_POST = 'REMOVE-POST'; */
 
 let store = {
   _state: {
@@ -62,7 +63,10 @@ let store = {
     this._renderEntireTree(this.get_state());
   }, */
   dispatch(action) {
-    if(action.type === 'ADD-POST') {
+    this._state.columnsPage = columnsPageReducer(this._state.columnsPage, action);
+    this._renderEntireTree(this.get_state());
+
+/*     if(action.type === 'ADD-POST') {
       let newPost = {
         id: 5,
         "itemTitle": action.itemTitle,
@@ -76,14 +80,15 @@ let store = {
     else if(action.type === 'REMOVE-POST') {
       this._state.columnsPage.columData.pop();
       this._renderEntireTree(this.get_state());
-    }
+    } */
+
   },
   observer(observer) {
     this._renderEntireTree = observer;
   }
 }
 
-//action
+/* //action
 export let addPostObjectData = (itemTitle, itemText) => {
   return {
     type: ADD_POST,
@@ -97,7 +102,7 @@ export let removePostObjectData = () => {
   return {
     type: REMOVE_POST,
   }
-}
+} */
 
 
 /* let renderEntireTree = () => {
