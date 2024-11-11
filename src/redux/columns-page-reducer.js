@@ -1,7 +1,32 @@
 const ADD_POST = 'ADD-POST';
 const REMOVE_POST = 'REMOVE-POST';
 
-const columnsPageReducer = (state, action) => {
+let initialState = {
+    columData: [
+        {
+            id: 1,
+            "itemTitle": "Заголовок 1",
+            "itemText": "По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст. В отличии от lorem ipsum, текст рыба на русском языке наполнит любой макет непонятным смыслом и придаст неповторимый колорит советских времен."
+        },
+        {
+            id: 2,
+            "itemTitle": "Заголовок 2",
+            "itemText": "По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у"
+        },
+        {
+            id: 3,
+            "itemTitle": "Заголовок 3",
+            "itemText": "По своей сути рыбатекст является альтернативой традиционному lorem ipsum, который вызывает у некторых людей недоумение при попытках прочитать рыбу текст."
+        },
+        {
+            id: 4,
+            "itemTitle": "Заголовок 4",
+            "itemText": "По своей сути рыбатекст является "
+        },
+    ]
+};
+
+const columnsPageReducer = (state = initialState, action) => {
     if (action.type === 'ADD-POST') {
         let newPost = {
             id: 5,

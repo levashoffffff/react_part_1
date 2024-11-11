@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 /* import {addPost} from './redux/state.js' */
-import store from './redux/state.js';
+import store from './redux/redux-store.js';
 import reportWebVitals from './reportWebVitals';
 /* import { observer } from './redux/state.js'; */
 
 
-
+const root = ReactDOM.createRoot(document.getElementById('root'));
 const renderEntireTree = (state) => {
-  const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
   <React.StrictMode>
     <App state={state} dispatch={store.dispatch.bind(store)}/>
@@ -18,9 +17,12 @@ const renderEntireTree = (state) => {
 );
 }
 
-renderEntireTree(store.get_state());
+renderEntireTree(store.getState());
 
-store.observer(renderEntireTree);
+store.subscribe(() => {
+  let state = store.getState();
+  renderEntireTree(state);
+});
 
 /* const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
