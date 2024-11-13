@@ -1,8 +1,6 @@
 import styles from './Columns.module.css';
 import ColumnsColum from './ColumnsColum/ColumnsColum';
 import React from 'react';
-import {addPostObjectData, removePostObjectData} from './../../redux/columns-page-reducer.js'
-
 
 const Columns = (props) => {
 
@@ -10,20 +8,15 @@ const Columns = (props) => {
     let addItemText = React.createRef();
 
     //Добавить пост
-    let addPost = () => {
+    let onAddPost = () => {
       let addTitle = addItemTitle.current.value;
       let addText = addItemText.current.value;
-      /* props.dispatch({
-        type: 'ADD-POST',
-        itemTitle: addTitle,
-        itemText: addText
-      }); */
-      props.dispatch(addPostObjectData(addTitle, addText));
+      props.addPost(addTitle, addText);
     }
 
     //Удалить пост
-    let removePost = () => {
-      props.dispatch(removePostObjectData());
+    let onRemovePost = () => {
+      props.removePost();
     }
 
     //Преобразование
@@ -51,8 +44,8 @@ const Columns = (props) => {
             <div>
               <input type="text" ref={addItemText} />
             </div>
-            <button type="button" onClick={addPost}>Добавить пост</button>
-            <button type="button" onClick={removePost}>Удалить пост</button>
+            <button type="button" onClick={onAddPost}>Добавить пост</button>
+            <button type="button" onClick={onRemovePost}>Удалить пост</button>
           </div>
         </div>
       </div>
