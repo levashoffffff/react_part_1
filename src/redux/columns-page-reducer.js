@@ -27,17 +27,22 @@ let initialState = {
 };
 
 const columnsPageReducer = (state = initialState, action) => {
+
+    let stateClone = {...state};
+
     if (action.type === 'ADD-POST') {
         let newPost = {
             id: 5,
             "itemTitle": action.itemTitle,
             "itemText": action.itemText
         }
-
-        state.columData.push(newPost);
+        stateClone.columData = [...state.columData];
+        stateClone.columData.push(newPost);
+        return stateClone;
     }
     else if (action.type === 'REMOVE-POST') {
-        state.columData.pop();
+        stateClone.columData.pop();
+        return stateClone;
     }
     return state;
 }

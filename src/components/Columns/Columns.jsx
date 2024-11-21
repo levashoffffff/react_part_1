@@ -12,6 +12,8 @@ const Columns = (props) => {
       let addTitle = addItemTitle.current.value;
       let addText = addItemText.current.value;
       props.addPost(addTitle, addText);
+      addItemTitle.current.value = "";
+      addItemText.current.value = "";
     }
 
     //Удалить пост
